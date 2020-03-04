@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="Make" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cars" EntityType="Self.Car" />
+    <FunctionImport Name="Create_Rec">
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+      <Parameter Name="Make" Mode="In" Type="String" />
+      <Parameter Name="Model" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Rec">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Select_Rec" ReturnType="Collection(ProjectModel.Select_Rec_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Rec">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+      <Parameter Name="Make" Mode="In" Type="String" />
+      <Parameter Name="Model" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Select_byanything" ReturnType="Collection(ProjectModel.Select_byanything_Result)">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+      <Parameter Name="model" Mode="In" Type="String" />
+      <Parameter Name="make" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Select_Rec_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="Year" Nullable="false" />
+    <Property Type="String" Name="Make" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Model" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Select_byanything_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="Year" Nullable="false" />
+    <Property Type="String" Name="Make" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Model" Nullable="false" MaxLength="20" />
+  </ComplexType>
+</Schema>

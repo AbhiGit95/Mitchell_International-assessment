@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectModelStoreContainer" CdmEntityContainer="ProjectEntities">
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="ProjectModel.Car">
+        <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Create_Rec" FunctionName="ProjectModel.Store.Create_Rec" />
+    <FunctionImportMapping FunctionImportName="Delete_Rec" FunctionName="ProjectModel.Store.Delete_Rec" />
+    <FunctionImportMapping FunctionImportName="Select_Rec" FunctionName="ProjectModel.Store.Select_Rec">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectModel.Select_Rec_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Update_Rec" FunctionName="ProjectModel.Store.Update_Rec" />
+    <FunctionImportMapping FunctionImportName="Select_byanything" FunctionName="ProjectModel.Store.Select_byanything">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectModel.Select_byanything_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
