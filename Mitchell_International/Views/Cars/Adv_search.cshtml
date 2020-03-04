@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Adv_search";
+}
+@Scripts.Render("~/Scripts/Angular.min.js")
+@Scripts.Render("~/Scripts/Search.js")
+<script src="~/Scripts/Search.js"></script>
+<script src="~/Scripts/Angular.min.js"></script>
+<!--<script>angular.module("carModule").value("carngcontroller",@Html.Raw(Model))</script>-->
+<h2 style="color:sandybrown">Advanced Search - Under Construction</h2>
+<body ng-app="app">
+    <div ng-controller="carngcontroller">
+        <p style="color:sandybrown">
+            Type In &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="search car model, make, year" />
+        </p>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <!--<input type="submit" value="Search" class="btn btn-primary" />-->
+            </div>
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <div>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    </div>
+</body>
+
